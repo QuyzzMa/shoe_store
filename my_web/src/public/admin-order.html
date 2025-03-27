@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý Đơn Hàng</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        width: 80%;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+
+      button {
+        padding: 8px 12px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+
+      button.update {
+        background-color: #ffc107;
+      }
+
+      button.delete {
+        background-color: #dc3545;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="goHome()" class="home-button">Quay lại trang chủ</button>
+
+      <h2>Quản lý Đơn Hàng</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID Đơn Hàng</th>
+            <th>Tên Khách Hàng</th>
+            <th>Ngày Tạo</th>
+            <th>Trạng Thái</th>
+            <th>Hành Động</th>
+          </tr>
+        </thead>
+        <tbody id="orderTableBody">
+          <!-- Dữ liệu sẽ được thêm từ JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="./js/adminOrder.js"></script>
+  </body>
+</html>

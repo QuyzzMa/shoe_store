@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giày Đá Bóng Chính Hãng - Neymar Sport</title>
+    <meta
+      name="description"
+      content="Khám phá giày đá bóng chính hãng từ Nike, Adidas, Puma với ưu đãi lên đến 30% tại Neymar Sport."
+    />
+    <meta
+      name="keywords"
+      content="giày bóng đá chính hãng, giày đá banh nike, giày đá banh adidas, neymar sport"
+    />
+    <meta name="author" content="Neymar Sport Team" />
+
+    <style>
+      /* Reset và cơ bản */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: linear-gradient(to right, #6b48ff, #00d2ff);
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        padding: 1.5rem;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header h1 {
+        font-size: 2.25rem;
+        margin-bottom: 0.625rem;
+      }
+
+      .header nav {
+        margin-top: 0.625rem;
+      }
+
+      .header nav a {
+        color: #337ab7;
+        text-decoration: none;
+        margin: 0 0.9375rem;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .header nav a:hover {
+        color: #23527c;
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 3.125rem 1.25rem;
+        background-color: #fff;
+        margin: 1.25rem;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+        margin-bottom: 0.625rem;
+      }
+
+      .hero p {
+        font-size: 1.125rem;
+        margin-bottom: 1.25rem;
+        color: #666;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.625rem 1.25rem;
+        background-color: #6b48ff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 0.3125rem;
+        transition: background-color 0.3s ease;
+        font-size: 1rem;
+      }
+
+      .btn:hover {
+        background-color: #5a3fdd;
+      }
+
+      /* Featured Products */
+      .featured-products {
+        padding: 1.25rem;
+        text-align: center;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .featured-products h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .product-list {
+        display: flex;
+        justify-content: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+      }
+
+      .product-item {
+        background-color: #fff;
+        padding: 0.9375rem;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+        width: 200px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .product-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-item img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 0.625rem;
+        border-radius: 0.3125rem;
+        transition: opacity 0.3s ease;
+        opacity: 1;
+      }
+
+      .product-item img.loading {
+        opacity: 0.5;
+      }
+
+      .product-item h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.625rem;
+        color: #333;
+      }
+
+      .product-item p {
+        font-size: 1rem;
+        color: #6b48ff;
+        margin-bottom: 0.625rem;
+      }
+
+      /* Countdown Timer */
+      .countdown {
+        padding: 1.25rem;
+        text-align: center;
+        background-color: #fff;
+        margin: 1.25rem;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .countdown h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .timer {
+        display: flex;
+        justify-content: center;
+        gap: 0.625rem;
+      }
+
+      .time-block {
+        background-color: #6b48ff;
+        color: #fff;
+        padding: 0.625rem;
+        border-radius: 0.3125rem;
+        min-width: 3.75rem;
+        text-align: center;
+      }
+
+      .time-block span {
+        font-size: 1.5rem;
+        display: block;
+      }
+
+      .time-block p {
+        font-size: 0.875rem;
+        margin-top: 0.3125rem;
+      }
+
+      /* Coupon Section */
+      .coupon-section {
+        padding: 1.25rem;
+        text-align: center;
+        background-color: #fff;
+        margin: 1.25rem;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .coupon-section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .coupon-toggle {
+        padding: 0.625rem 1.25rem;
+        background-color: #6b48ff;
+        color: #fff;
+        border: none;
+        border-radius: 0.3125rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 1rem;
+      }
+
+      .coupon-toggle:hover {
+        background-color: #5a3fdd;
+      }
+
+      /* Coupon Modal */
+      .coupon-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: #fff;
+        padding: 1.25rem;
+        border-radius: 0.625rem;
+        width: 90%;
+        max-width: 25rem;
+        text-align: center;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+      }
+
+      .coupon-content {
+        padding: 1.25rem;
+      }
+
+      .coupon-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+        color: #333;
+      }
+
+      .coupon-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.625rem;
+      }
+
+      .coupon-label {
+        font-weight: 600;
+        color: #555;
+      }
+
+      .code {
+        color: #6b48ff;
+        font-weight: bold;
+        font-size: 1.125rem;
+      }
+
+      .coupon-info {
+        color: #666;
+        font-size: 0.875rem;
+      }
+
+      .coupon-action {
+        margin-top: 1.25rem;
+      }
+
+      .coupon-action .btn {
+        padding: 0.625rem 1.25rem;
+        margin: 0 0.625rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 1.75rem;
+        }
+
+        .header nav a {
+          margin: 0 0.5rem;
+          font-size: 0.875rem;
+        }
+
+        .hero h2 {
+          font-size: 1.5rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .featured-products h2 {
+          font-size: 1.5rem;
+        }
+
+        .product-item {
+          width: 45%;
+        }
+
+        .countdown h2 {
+          font-size: 1.5rem;
+        }
+
+        .time-block {
+          min-width: 2.5rem;
+        }
+
+        .time-block span {
+          font-size: 1.125rem;
+        }
+
+        .coupon-section h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .product-item {
+          width: 100%;
+        }
+
+        .timer {
+          flex-direction: column;
+          gap: 0.3125rem;
+        }
+
+        .time-block {
+          width: 100%;
+        }
+      }
+
+      /* Nút Đăng xuất */
+      #logout-btn {
+        background-color: #dc3545; /* Màu đỏ */
+        color: white;
+        border: none;
+        padding: 4px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+      }
+
+      /* Hiệu ứng hover */
+      #logout-btn:hover {
+        background-color: #c82333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <h1>Giày Đá Bóng Chính Hãng - Neymar Sport</h1>
+      <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="cart.html">Giỏ hàng</a>
+        <a href="order-detail.html">Đơn đặt hàng</a>
+        <a id="login-link" href="login.html">Đăng nhập</a>
+        <a href="admin.html" id="admin-product" style="display: none"
+          >Quản lý sản phẩm</a
+        >
+        <a href="admin-user.html" id="admin-user" style="display: none"
+          >Quản lý người dùng</a
+        >
+        <a href="admin-category.html" id="admin-category" style="display: none"
+          >Quản lý danh mục</a
+        >
+        <a href="admin-order.html" id="admin-order" style="display: none"
+          >Quản lý đặt hàng</a
+        >
+
+        <span id="user-profile" style="display: none"></span>
+        <button id="logout-btn" style="display: none" onclick="logout()">
+          Đăng xuất
+        </button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Chào mừng đến với Neymar Sport</h2>
+      <p>
+        Khám phá bộ sưu tập giày đá bóng chính hãng từ Nike, Adidas, Puma với ưu
+        đãi lên đến 30%!
+      </p>
+      <a href="products.html" class="btn">Xem sản phẩm</a>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+      <h2>Sản phẩm nổi bật</h2>
+      <div class="product-list" id="productList">
+        <!-- Sản phẩm sẽ được thêm động bằng JavaScript -->
+      </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="countdown">
+      <h2>Flash Sale Đếm Ngược</h2>
+      <div class="timer">
+        <div class="time-block">
+          <span id="days">0</span>
+          <p>Ngày</p>
+        </div>
+        <div class="time-block">
+          <span id="hrs">0</span>
+          <p>Giờ</p>
+        </div>
+        <div class="time-block">
+          <span id="mins">0</span>
+          <p>Phút</p>
+        </div>
+        <div class="time-block">
+          <span id="secs">0</span>
+          <p>Giây</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coupon Section -->
+    <section class="coupon-section">
+      <h2>Khuyến mãi đặc biệt</h2>
+      <button class="btn coupon-toggle">Nhận mã giảm giá</button>
+    </section>
+
+    <!-- Coupon Modal -->
+    <div id="coupon-modal" class="coupon-modal">
+      <div class="modal-content">
+        <div class="coupon-content">
+          <div class="coupon-title">Mã giảm giá đặc biệt</div>
+          <div class="coupon-row">
+            <div class="coupon-label">Mã khuyến mãi:</div>
+            <span class="code">NEYMAR30</span>
+          </div>
+          <div class="coupon-row">
+            <div class="coupon-label">Điều kiện:</div>
+            <div class="coupon-info">
+              Giảm 30% cho đơn hàng từ 1.000.000 VNĐ
+            </div>
+          </div>
+          <div class="coupon-action">
+            <button class="btn btn-close">Đóng</button>
+            <button class="btn btn-copy">Sao chép</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./js/index.js"></script>
+    <script src="./js//auth.js"></script>
+  </body>
+</html>

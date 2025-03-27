@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - Neymar Sport</title>
+    <meta name="description" content="Thanh toán đơn hàng của bạn tại Neymar Sport.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset và cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: linear-gradient(to right, #6b48ff, #00d2ff);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .header nav {
+            margin-top: 10px;
+        }
+
+        .header nav a {
+            color: #337ab7;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        .header nav a:hover {
+            color: #23527c;
+        }
+
+        /* Checkout Section */
+        .checkout {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .checkout-container {
+            display: flex;
+            gap: 30px;
+            max-width: 900px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .checkout-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .checkout-card h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkout-card h2 i {
+            color: #6b48ff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #6b48ff;
+            outline: none;
+        }
+
+        .btn.checkout-btn {
+            width: 100%;
+            background: linear-gradient(to right, #6b48ff, #00d2ff);
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .btn.checkout-btn:hover {
+            background: linear-gradient(to right, #5a3fdd, #00b7e6);
+        }
+
+        .btn.checkout-btn i {
+            font-size: 14px;
+        }
+
+        .order-summary .summary-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            color: #666;
+        }
+
+        .order-summary .summary-total {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .order-summary .summary-total span {
+            color: #6b48ff;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .checkout-container {
+                flex-direction: column;
+            }
+
+            .checkout-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Giày Đá Bóng Chính Hãng - Neymar Sport</h1>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="products.html">Sản phẩm</a>
+            <a href="cart.html">Giỏ hàng</a>
+            <a href="login.html">Đăng nhập</a>
+        </nav>
+    </header>
+
+    <!-- Checkout Section -->
+    <section class="checkout">
+        <div class="checkout-container">
+            <!-- Payment Information Card -->
+            <div class="checkout-card payment-info">
+                <h2><i class="fas fa-credit-card"></i> Thông tin thanh toán</h2>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="fullName">Họ và tên:</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address" name="address" required placeholder="Nhập địa chỉ">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Phương thức thanh toán:</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="COD">Thanh toán khi nhận hàng (COD)</option>
+                            <option value="BankTransfer">Chuyển khoản ngân hàng</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn checkout-btn">Xác nhận đơn hàng <i class="fas fa-check"></i></button>
+                </form>
+            </div>
+
+            <!-- Order Summary Card -->
+            <div class="checkout-card order-summary">
+                <h2><i class="fas fa-shopping-cart"></i> Tóm tắt đơn hàng</h2>
+                <div id="summaryItems"></div>
+                <div class="summary-total" id="summaryTotal">
+                    <strong>Tổng tiền: <span>0 VNĐ</span></strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Hàm gọi API với token xác thực (dùng cho giỏ hàng và thanh toán)
+        async function fetchWithToken(url, method = 'GET', body = null) {
+            const token = localStorage.getItem('token'); // Giả định bạn lưu token sau khi đăng nhập
+            if (!token) {
+                alert('Vui lòng đăng nhập để thanh toán.');
+                window.location.href = 'login.html';
+                throw new Error('No token found');
+            }
+
+            const options = {
+                method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            };
+            if (body) {
+                options.body = JSON.stringify(body);
+            }
+
+            const response = await fetch(url, options);
+            if (!response.ok) {
+                if (response.status === 401) {
+                    alert('Phiên đăng nhập hết hạn. Vui lòng đăng nhập lại.');
+                    window.location.href = 'login.html';
+                }
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        }
+
+        // Lấy danh sách sản phẩm trong giỏ hàng và cập nhật tóm tắt đơn hàng
+        async function loadSummary() {
+            try {
+                const cartItems = await fetchWithToken('http://localhost:5000/api/cart');
+                updateSummary(cartItems);
+            } catch (err) {
+                console.error('Failed to load cart:', err);
+                alert('Không thể tải tóm tắt đơn hàng. Vui lòng thử lại.');
+            }
+        }
+
+        // Cập nhật giao diện tóm tắt đơn hàng
+        function updateSummary(cartItems) {
+            const summaryItemsDiv = document.getElementById('summaryItems');
+            const summaryTotalDiv = document.getElementById('summaryTotal');
+
+            if (cartItems.length === 0) {
+                summaryItemsDiv.innerHTML = '<p>Giỏ hàng trống. Vui lòng thêm sản phẩm!</p>';
+                summaryTotalDiv.innerHTML = '<strong>Tổng tiền: <span>0 VNĐ</span></strong>';
+                document.querySelector('.btn.checkout-btn').disabled = true; // Vô hiệu hóa nút thanh toán
+                return;
+            }
+
+            document.querySelector('.btn.checkout-btn').disabled = false; // Kích hoạt nút thanh toán
+            let total = 0;
+            summaryItemsDiv.innerHTML = '';
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'summary-item';
+                itemDiv.innerHTML = `<p>${item.name}: ${item.price.toLocaleString()} VNĐ x ${item.quantity}</p>`;
+                summaryItemsDiv.appendChild(itemDiv);
+            });
+
+            summaryTotalDiv.innerHTML = `<strong>Tổng tiền: <span>${total.toLocaleString()} VNĐ</span></strong>`;
+        }
+
+        // Xử lý form thanh toán
+        document.getElementById('checkoutForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+
+            try {
+                const response = await fetchWithToken('http://localhost:5000/api/orders', 'POST', {
+                    fullName,
+                    address,
+                    phone,
+                    paymentMethod
+                });
+                alert(response.message);
+                window.location.href = 'index.html'; // Chuyển hướng về trang chủ
+            } catch (err) {
+                console.error('Failed to create order:', err);
+                alert('Thanh toán thất bại. Vui lòng thử lại.');
+            }
+        });
+
+        // Tải tóm tắt đơn hàng khi trang được tải
+        document.addEventListener('DOMContentLoaded', loadSummary);
+    </script>
+</body>
+</html>

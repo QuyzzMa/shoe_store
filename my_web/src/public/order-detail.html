@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh Sách Đơn Hàng</title>
+    <style>
+      /* Cấu hình cho body */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Phần tiêu đề */
+      h1 {
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+      }
+
+      /* Chỉnh sửa phần danh sách đơn hàng */
+      #orders-list {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Đơn hàng */
+      .order {
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .order h3 {
+        margin-top: 0;
+        color: #4caf50;
+      }
+
+      .order p {
+        font-size: 14px;
+        margin: 5px 0;
+      }
+
+      /* Bảng danh sách sản phẩm */
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: blue;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #e2f7e2;
+      }
+
+      /* Điều chỉnh để responsive trên thiết bị di động */
+      @media (max-width: 768px) {
+        body {
+          padding: 0 10px;
+        }
+
+        #orders-list {
+          padding: 15px;
+        }
+
+        table {
+          font-size: 14px;
+        }
+      }
+      /* Header */
+      .header {
+        text-align: center;
+        padding: 1.5rem;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header h1 {
+        font-size: 2.25rem;
+        margin-bottom: 0.625rem;
+      }
+
+      .header nav {
+        margin-top: 0.625rem;
+      }
+
+      .header nav a {
+        color: #337ab7;
+        text-decoration: none;
+        margin: 0 0.9375rem;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .header nav a:hover {
+        color: #23527c;
+      }
+      /* Nút Đăng xuất */
+      #logout-btn {
+        background-color: #dc3545; /* Màu đỏ */
+        color: white;
+        border: none;
+        padding: 4px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+      }
+
+      /* Hiệu ứng hover */
+      #logout-btn:hover {
+        background-color: #c82333;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Giày Đá Bóng Chính Hãng - Neymar Sport</h1>
+      <nav>
+        <a href="index.html">Trang chủ</a>
+        <a href="products.html">Sản phẩm</a>
+        <a href="cart.html">Giỏ hàng</a>
+        <a href="order-detail.html">Đơn đặt hàng</a>
+        <a id="login-link" href="login.html">Đăng nhập</a>
+        <a href="admin.html" id="admin-product" style="display: none"
+          >Quản lý sản phẩm</a
+        >
+        <a href="admin-user.html" id="admin-user" style="display: none"
+          >Quản lý người dùng</a
+        >
+        <a href="admin-category.html" id="admin-category" style="display: none"
+          >Quản lý danh mục</a
+        >
+        <a href="admin-order.html" id="admin-order" style="display: none"
+          >Quản lý đặt hàng</a
+        >
+
+        <span id="user-profile" style="display: none"></span>
+        <button id="logout-btn" style="display: none" onclick="logout()">
+          Đăng xuất
+        </button>
+      </nav>
+    </header>
+    <h1>Danh sách đơn hàng của bạn</h1>
+
+    <div id="orders-list">
+      <!-- Danh sách đơn hàng sẽ được hiển thị ở đây -->
+    </div>
+
+    <script src="./js/orderDetail.js"></script>
+
+    <script src="./js/auth.js"></script>
+  </body>
+</html>
